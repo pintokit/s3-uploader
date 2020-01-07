@@ -28,3 +28,5 @@ const users = ["chalkers", "alenaholligan", "davemcfarland"];
 // });
 
 users.forEach(getProfile);
+
+// `process` is a global object we can access the current version of node and arguments passed in to the command line
