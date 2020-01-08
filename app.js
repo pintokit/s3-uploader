@@ -53,7 +53,7 @@ const uploadFile = (fileName) => {
       console.log(`Photo uploaded successfully: ${data.Location}`);
     }, 
     function(error) {
-      return console.error("Error uploading photo:", errror.message);
+      console.error("Error uploading photo:", error.message);
     }
   );
 };
