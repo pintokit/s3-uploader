@@ -43,4 +43,5 @@ function get(username) {
   }
 }
 
+// module.exports.nameOfAPIFunction = nameOfFunction being exported
 module.exports.get = get;
