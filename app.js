@@ -19,5 +19,5 @@ https.createServer(function(request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
   response.end('Hello World\n');
 }).listen(port, function() {
-  console.log("Server running at http://" + ":" + port + "/");
+  console.log(port);
 });
