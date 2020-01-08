@@ -11,7 +11,7 @@ const BUCKET_NAME = process.env.S3_BUCKET_NAME
 const s3 = new AWS.S3({
   accessKeyId: ID,
   secretAccessKey: SECRET
-});
+})
 
 const app = express()
 const storage = multer.memoryStorage()
