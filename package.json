@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "aws-sdk": "^2.597.0"
+    "aws-sdk": "^2.599.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -13,10 +13,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Litlmoz/s3-uploader.git"
-  }, 
+  },
   "engines": {
-      "node": "13.5.0",
-      "npm": "6.13.4"
+    "node": "13.5.0",
+    "npm": "6.13.4"
   },
   "author": "David Solis",
   "license": "ISC",
