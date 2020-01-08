@@ -17,8 +17,16 @@ const http = require('http');
 const port = process.env.PORT || 5000;
 
 http.createServer(function(request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.end('Hello World\n');
+  if (request.method === 'POST') {
+    console.dir(request);
+  } else if (request.method === 'GET') {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end('<form method="post" enctype="multipart/form-data" action="/">' +
+      '<input id="photoUpload" type="file" accept="image/*">' +
+      '<input type="submit">' +
+      '</form>'
+    );
+  }
 }).listen(port, function() {
   console.log(port);
 });
