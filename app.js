@@ -49,11 +49,11 @@ const uploadFile = (fileName) => {
   const promise = s3.upload(params).promise()
 
   promise.then(
-    function(data) {
-      console.log(`Photo uploaded successfully: ${data.Location}`);
-    }, 
-    function(error) {
-      console.error("Error uploading photo:", error.message);
+    (data) => {
+       console.log(`Photo uploaded successfully: ${data.Location}`);
+  }).catch(
+    (reason) => {
+      console.error("Error uploading photo:", reason.message);
     }
   );
 };
