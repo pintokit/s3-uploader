@@ -1,5 +1,6 @@
 // require https module
 const https = require('https');
+const http = require(`http`);
 
 // Print Error Messages
 function printError(error) {
@@ -30,7 +31,7 @@ function getProfile(username) {
           }
         });
       } else {
-        const message = `There was an error getting the profile for ${username} (${response.statusCode})`;
+        const message = `There was an error getting the profile for ${username} (${http.STATUS_CODES[response.statusCode]})`;
         const statusCodeError = new Error(message);
         printError(statusCodeError);
       }
