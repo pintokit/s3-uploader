@@ -17,7 +17,7 @@ const app = express()
 const upload = multer({ dest: 'uploads/' })
 
 app.get('/', function(request, response) {
-  response.send('<form method="post" enctype="multipart/form-data" action="/">' + '<input id="photoUpload" type="file" accept="image/*">' + '<input type="submit">' + '</form>')
+  response.send('<form method="post" enctype="multipart/form-data" action="/">' + '<input name="photoUpload" type="file" accept="image/*">' + '<input type="submit">' + '</form>')
 })
 
 app.listen(5000)
