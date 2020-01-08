@@ -1,5 +1,5 @@
 // file path is required but file extension is not
-const profile = require(`./profile.js`)
+const profile = require(`./profile.js`);
 const http = require('http');
 
 const port = process.env.PORT || 5000;
@@ -20,5 +20,3 @@ const users = ["chalkers", "alenaholligan", "davemcfarland"];
 // });
 
 users.forEach(profile.get);
-
-uploadFile('sample.png');
