@@ -14,7 +14,8 @@ const s3 = new AWS.S3({
 });
 
 const app = express()
-const upload = multer({ dest: 'uploads/' })
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage })
 
 app.get('/', function(request, response) {
   response.send('<form method="post" enctype="multipart/form-data" action="/">' + '<input name="photoUpload" type="file" accept="image/*">' + '<input type="submit">' + '</form>')
