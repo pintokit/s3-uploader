@@ -13,8 +13,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Litlmoz/s3-uploader.git"
-  }, "engines": {
-      "node": "13.5.0"
+  }, 
+  "engines": {
+      "node": "13.5.0",
+      "npm": "6.13.4"
   },
   "author": "David Solis",
   "license": "ISC",
