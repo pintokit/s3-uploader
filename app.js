@@ -12,11 +12,11 @@ require('dotenv').config()
 
 // users.forEach(profile.get);
 
-const https = require('http');
+const http = require('http');
 
 const port = process.env.PORT || 5000;
 
-https.createServer(function(request, response) {
+http.createServer(function(request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
   response.end('Hello World\n');
 }).listen(port, function() {
@@ -58,4 +58,4 @@ const uploadFile = (fileName) => {
   );
 };
 
-uploadFile('sample.png');
+// uploadFile('sample.png');
