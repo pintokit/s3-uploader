@@ -18,9 +18,9 @@ const app = express()
 const storage = multerS3({
   s3: s3, 
   bucket: BUCKET_NAME,
-  key: function (req, file, setKeyWith) {
-    let name = file.originalname.toLowerCase().replace(' ', '')
-    setKeyWith(null, Date.now().toString() + name)
+  key: function (req, file, setKey) {
+    let imageType = file.mimetype.replace('image/', '.')
+    setKey(null, Date.now().toString() + imageType)
   }
 })
 const upload = multer({storage: storage, limits: { fileSize: 20 * 1000 * 1000 } }).single('photoUpload')
@@ -33,13 +33,13 @@ app.post('/', function(request, response) {
   upload(request, response, function(error) {
     if (error instanceof multer.MulterError) {
       console.error(error.message)
-      return response.status(500).send(`${error.message}`)
+      response.status(500).send(`${error.message}`)
     } else if (error) {
       console.error(error.message)
-      return response.status(500).send(`${error.message}`)
+      response.status(500).send(`${error.message}`)
     }
     console.log('File uploaded')
-    return response.status(200).send('File uploaded')
+    response.status(200).send('File uploaded')
   })
 })
 
