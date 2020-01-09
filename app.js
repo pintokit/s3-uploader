@@ -32,6 +32,10 @@ app.get('/', function(request, response) {
   response.send('<form method="post" enctype="multipart/form-data" action="/">' + '<input name="photoUpload" type="file" accept="image/*">' + '<input type="submit">' + '</form>')
 })
 
+app.get('/image', function (request, response) {
+  response.send('<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image href="https://photo-uploader-dev.s3-us-west-1.amazonaws.com/1578540232146.jpeg" height="200" width="200"></image></svg>')
+})
+
 app.post('/', function(request, response) {
   upload(request, response, function(error) {
     if (error instanceof multer.MulterError) {
